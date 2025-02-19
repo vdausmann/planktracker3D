@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Record a video for 5 seconds
-raspivid -o video.h264 -t 5000 -fps 30
+raspicam-vid -o video.h264 -t 5000 -fps 30
 
 # Convert the video to MP4 format
 MP4Box -add video.h264 video.mp4

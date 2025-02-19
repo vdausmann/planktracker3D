@@ -12,7 +12,7 @@ def capture_images(num_images, interval, output_dir):
         filename = os.path.join(output_dir, f"image_{i+1}.jpg")
         
         # Call rpicam-still to capture the image
-        command = ["rpicam-still", "-o", filename]
+        command = ["rpicam-jpeg", "-o", filename, "-n"]
         try:
             subprocess.run(command, check=True)
             print(f"Captured {filename}")
@@ -26,8 +26,9 @@ def capture_images(num_images, interval, output_dir):
 def main():
     # Parameters
     num_images = 5             # Number of images to capture
-    interval = 2               # Time between captures in seconds
-    output_dir = "./images"    # Directory to save images
+    interval = .2               # Time between captures in seconds
+    output_dir = "../images"    # Directory to save images
+    timeout = 0
     
     # Start capturing images
     capture_images(num_images, interval, output_dir)
